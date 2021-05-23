@@ -13,3 +13,8 @@ function Book(title, author, pages, read) {
 function addBookToLibrary() {
 
 }
+
+let title = documentGetElementById('book-title');
+let author = documentGetElementById('author-name');
+let pages = documentGetElementById('book-pages');
+let readBook = documentGetElementById('read-book');
