@@ -2,28 +2,33 @@ body {
     text-align: center;
     margin-top: 2em;
 }
+#background-image{
+    background-image: url(https://images.pexels.com/photos/442420/books-shelves-architecture-wood-442420.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260_);
+    background-position: center;
+    background-size: cover;
+    opacity:0.5;
+}
 table{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     width: 80%;
     border-collapse: collapse;
-    border: 3px solid black;
     display:
 }
 
 th {
     padding: 5px;
-    border-bottom: 2px dotted black;
+    border-bottom: 2px solid black;
 }
 
 td {
-    padding-bottom: 5px;
-    padding-top: 5px;
+    padding: 5px;
+    border-bottom: 1px dotted grey;
 }
 
 form {
-    border: 1px solid red;
+    padding: 15px;
     display:block;
     width: 50%;
     margin-left: auto;
@@ -43,4 +48,15 @@ label {
 input {
     width: 200px;
     height: 28px;
+}
+#read-book {
+}
+
+#add-book-btn{
+    padding: 4px 8px;
+    margin-top: 3em;
+    width: 10em;
+    height: 3em;
+    background-color:aquamarine;
+    border-radius: 5px;
 }

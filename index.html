@@ -2,9 +2,11 @@
     <link href="style.css" rel='stylesheet'> 
 </head>
 <body>
+    <div id='background-image'>
+    </div>
     <header>
         <h1>The Library</h1>
-        <p> Local Storage of Books </p>
+        <h2> Local Storage of Books </h2>
     </header>
     <form>
         <label for='title'>Book Title </label>
@@ -14,29 +16,10 @@
         <label for='pages'>Number of Pages</label>
         <input type='number' id='book-pages' name='pages'><br>
         <label for='read'>Finished Reading?</label>
-        <input type='text' id='read-book' name='read'><br>
-        <input type='button'value='Add Book'>
+        <input type='checkbox' id='read-book' name='read'><br>
+        <button id='add-book-btn'>Add Book</button>
     </form>
-
-    <table>
-        <tr>
-            <th>Book Title</th>
-            <th>Author</th>
-            <th>Pages</th>
-            <th>Read?</th>
-        </tr>
-        <tr>
-            <td>The Hobbit</td>
-            <td>J.R.R. Tolkein</td>
-            <td>295</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <td>Example 2</td>
-            <td>Example 2</td>
-            <td>295</td>
-            <td>Yes</td>
-        </tr>
+    <table id ="table-books">
     </table>
 
     <script src="index.js"></script>
