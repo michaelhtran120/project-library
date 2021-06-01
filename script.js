@@ -1,15 +1,17 @@
-let myLibrary = [ 
-    {'title': 'The Hobbit',
-    'author':'J.R.R Tolkein',
-    'pages': '100 pgs',
-    'read': true,
-    // 'index': myLibrary.indexOf(this),
+let myLibrary = [
+    {
+        'title': 'The Hobbit',
+        'author': 'J.R.R Tolkein',
+        'pages': '100 pgs',
+        'read': true,
+        // 'index': myLibrary.indexOf(this),
     },
-    {'title': 'HP Sorcerer Stone',
-    'author': 'J.K. Rowling',
-    'pages': '200 pgs',
-    'read': false,
-    // 'index': myLibrary.indexOf(this)
+    {
+        'title': 'HP Sorcerer Stone',
+        'author': 'J.K. Rowling',
+        'pages': '200 pgs',
+        'read': false,
+        // 'index': myLibrary.indexOf(this)
     }
 ];
 
@@ -39,6 +41,7 @@ function addBook(ev) {
         // }
     }
 
+
     book = new Book(title.value, author.value, pages.value, read.checked);
     myLibrary.push(book)
     document.querySelector('form').reset();
@@ -61,30 +64,48 @@ function displayBook() {
         newTableRow.innerHTML += `<td> ${myLibrary[i]['author']} </td>`;
         newTableRow.innerHTML += `<td> ${myLibrary[i]['pages']} </td>`;
         if (myLibrary[i]['read'] === true) {
-            newTableRow.innerHTML += `<td><input type='checkbox' name='checkbox' value='${i}'checked></td>`;
+            newTableRow.innerHTML += `<td><input type='checkbox' class='checkbox' value='${i}'checked></td>`;
         } else {
-            newTableRow.innerHTML += `<td><input type='checkbox' name='checkbox' value='${i}'></td>`
+            newTableRow.innerHTML += `<td><input type='checkbox' class='checkbox' value='${i}'></td>`
         }
         newTableRow.innerHTML += `<td><button class='delete-btn' onclick='deleteBook(${i})'>Delete Book</button></td>`
         tableBooks.appendChild(newTableRow);
     }
+    document.querySelectorAll('.checkbox').forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            if (myLibrary[`${i}`]["read"] === true) {
+                myLibrary[this.value]['read'] = false;
+            } else {
+                myLibrary[this.value]['read'] = true;
+            }
+        })
+    })
 }
 displayBook();
-
 
 function deleteBook(id) {
     myLibrary.splice(id, 1)
     displayBook();
 }
 
-let checkbox = document.getElementsByName('checkbox');
+// document.querySelectorAll('.checkbox').forEach(checkbox => {
+//     checkbox.addEventListener('change', () => {
+//         if (myLibrary[this.value]["read"] === true) {
+//             myLibrary[this.value]['read'] = false;
+//         } else {
+//             myLibrary[this.value]['read'] = true;
+//         }
+//     })
+// })
 
-for (let i = 0; i < checkbox.length; i++) {
-    checkbox[i].addEventListener('change', () =>{
-        if (myLibrary[this.value]['read'] == true) {
-            myLibrary[this.value]['read'] = false;
-        } else {
-            myLibrary[this.value]['read'] = true;
-        }
-    })
-}
+// let checkbox = document.querySelectorAll('.checkbox');
+
+// for (let i = 0; i < checkbox.length; i++) {
+//     checkbox[i].addEventListener('change', () => {
+//         if (myLibrary[this.value]['read'] == true) {
+//             myLibrary[this.value]['read'] = false;
+//         } else {
+//             myLibrary[this.value]['read'] = true;
+//         }
+//     })
+// }
