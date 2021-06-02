@@ -28,6 +28,8 @@ th {
   padding: 5px;
   border-bottom: 2px solid black;
   font-weight: bold;
+  background-color: black;
+  color: white;
 }
 
 td {
