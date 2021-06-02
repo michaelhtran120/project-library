@@ -1,25 +1,40 @@
 <head>
-    <link href="style.css" rel='stylesheet'> 
+  <link href="style.css" rel="stylesheet" />
 </head>
 <body>
+  <div>
+    <div class='bg-img'>
+      
+    </div>
+  </div>
+  <header>
+    <h1>The Library</h1>
+    <h2>Local Storage of Books</h2>
+  </header>
+  <button class="btn--show-modal" id="new-book-btn">New Book</button>
+  <div class="modal-bg hidden"></div>
+    <div class="modal hidden">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">Enter Book Info</h2>
+      <form class="modal__form">
+        <label for="title">Book Title </label>
+        <input type="text" id="book-title" name="title" required /><br />
+        <label for="author">Name of Author</label>
+        <input type="text" id="author-name" name="author" required /><br />
+        <label for="pages">Number of Pages</label>
+        <input type="number" id="book-pages" name="pages" /><br />
+        <label for="read">Finished Reading?</label>
+        <input
+          class="checkbox"
+          type="checkbox"
+          id="read-book"
+          name="name"
+        /><br />
+        <button id="add-book-list-btn">Add To List</button>
+      </form>
+    </div>
+  </div>
+  <table id="table-books"></table>
 
-    <header>
-        <h1>The Library</h1>
-        <h2> Local Storage of Books </h2>
-    </header>
-    <form>
-        <label for='title'>Book Title </label>
-        <input type='text' id='book-title' name='title'><br>
-        <label for='author'>Name of Author</label>
-        <input type='text' id='author-name' name='author'><br>
-        <label for='pages'>Number of Pages</label>
-        <input type='number' id='book-pages' name='pages'><br>
-        <label for='read'>Finished Reading?</label>
-        <input type='checkbox' id='read-book' name='read'><br>
-        <button id='add-book-btn'>Add Book</button>
-    </form>
-    <table id ="table-books">
-    </table>
-
-    <script src="index.js"></script>
+  <script src="script.js"></script>
 </body>
